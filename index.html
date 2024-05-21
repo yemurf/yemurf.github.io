@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/fullpage.css">
+
+    <script src="./js/fullpage.js"></script>    
+    <script src="./js/jquery.min.js"></script>
+    <!-- <script src="./js/easing.js"></script> -->
+    <title>portfolio</title>
+    <style>
+        @font-face {
+            font-family: 'ibm';
+            src: url(./fonts/IBMPlex/IBMPlexSerif-Light.ttf);
+            font-weight:300;
+        }
+        @font-face {
+            font-family: 'ibm';
+            src: url(./fonts/IBMPlex/IBMPlexSerif-Medium.ttf);
+            font-weight:500;
+        }
+        @font-face {
+            font-family: 'ibm';
+            src: url(./fonts/IBMPlex/IBMPlexSerif-Regular.ttf);
+            font-weight:400;
+        }
+        @font-face {
+            font-family: 'noto';
+            src: url(./fonts/NotoSansKR.ttf);
+        }
+        :root{
+            --color01:#1d5089;
+            --color02:#fbdbe0;
+            --color03:#dbf3fa;
+            --color04:#f56b8d;
+            --color05:#000;
+            --color06:#fff;
+
+            font-family:'noto';
+            font-size: 30px;
+            font-weight:400;
+            color:var(--color05);
+        }
+       
+        .container{
+            width: 1280px;
+            margin: 0 auto;
+        }
+
+        #header{
+            padding: 22px 0;
+        }
+        #header .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #header h1{
+            width: 40px;
+        }
+        #header ul{
+            /* width: 800px; */
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <section class="wrap">
+        <header id="header">
+            <div class="container">                
+                <h1>
+                    <a href="#home">
+                        <div class="img-box"><img src="./images/eclipse-logo.png" alt="pflogo"></div>
+                    </a>
+                </h1>
+                <nav>
+                    <ul class="main-nav">
+                        <li><a href="#about">ABOUT</a></li>
+                        <li><a href="#project">PROJECT</a></li>
+                        <li><a href="#design">DESIGN</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- <div id="fullpage">
+            <section class="section home">
+                <div class="container">
+                    home
+                </div>
+            </section>
+            <section class="section about">
+                <div class="container">
+                    about
+                </div>
+            </section>
+            <section class="section project">
+                <div class="container">
+                    project
+                </div>
+            </section>
+            <section class="section design">
+                <div class="container">
+                    design
+                </div>
+            </section>
+            <section class="section contact">
+                <div class="container">
+                    contact
+                </div>
+            </section>
+        </div> -->
+        
+    </section>
+
+    <script>
+        new fullpage('#fullpage', {
+            //options here
+            autoScrolling:true,
+            scrollHorizontally: true,
+            anchors:['home', 'about', 'project','design','contact']
+        });
+    </script>
+</body>
+</html>
