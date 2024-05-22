@@ -18,13 +18,13 @@
         }
         @font-face {
             font-family: 'ibm';
-            src: url(./fonts/IBMPlex/IBMPlexSerif-Medium.ttf);
-            font-weight:500;
+            src: url(./fonts/IBMPlex/IBMPlexSerif-Regular.ttf);
+            font-weight:400;
         }
         @font-face {
             font-family: 'ibm';
-            src: url(./fonts/IBMPlex/IBMPlexSerif-Regular.ttf);
-            font-weight:400;
+            src: url(./fonts/IBMPlex/IBMPlexSerif-Medium.ttf);
+            font-weight:500;
         }
         @font-face {
             font-family: 'noto';
@@ -45,33 +45,99 @@
         }
        
         .container{
-            width: 1280px;
+            width: 960px;            
             margin: 0 auto;
+            padding:0 28px; 
         }
-
         #header{
-            padding: 22px 0;
+            padding-top: 22px;
+            position: relative;
+            z-index:10;
         }
         #header .container{
-            display: flex;
+            display: grid;
+            grid-template-columns:1fr 5fr;
+            column-gap: 20px;
             justify-content: space-between;
             align-items: center;
         }
-        #header h1{
-            width: 40px;
+        #header .logo{
+            width:40px;
+            height:40px;
         }
-        #header ul{
-            /* width: 800px; */
+        #header .main-nav{
+            display:flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        #header .main-nav li{
+            margin-left:64px;
+            font-family: 'ibm';
+            font-weight:400;
+            color:var(--color01);
+        }
+
+        .home .container{
+            width: 638px; /*?*/
             display: flex;
-            justify-content: space-between;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: flex-start;
         }
+        .home .container p{
+            width: 77px;
+            height: 36px;
+            border: 3px solid #000;
+            border-radius: 18px; 
+            text-align: center;
+            line-height: 29px; 
+           nt-family: 'ibm';
+            /* font-weight: 300; */
+            font-size: 20px;       }
+        .home h2{
+            font-family: 'ibm';
+            font-weight: 500;
+            font-size: 150px;
+            transform: translateY(-10px);
+        }
+        .home .txt{ 
+            transform: translate(575px,-173px);
+        }
+
+
+
+        .home .sub-nav{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            column-gap: 20px;
+        }
+        .home .sub-nav a{           
+            display: block;
+            height: 35px;
+            border: 2px solid #000;
+            border-radius: 18px;  
+            padding-right: 10px;
+            line-height: 27px; 
+            font-family: 'ibm';        
+            font-weight: 300;
+            font-size: 20px;
+            text-align: right;
+            background: url(./images/화살표.png) no-repeat 20px center;
+            background-size: 15px 15px;
+        }
+        
+      
+
+
+        
     </style>
 </head>
 <body>
     <section class="wrap">
         <header id="header">
             <div class="container">                
-                <h1>
+                <h1 class="logo">
                     <a href="#home">
                         <div class="img-box"><img src="./images/eclipse-logo.png" alt="pflogo"></div>
                     </a>
@@ -86,10 +152,26 @@
                 </nav>
             </div>
         </header>
-        <!-- <div id="fullpage">
+        <div id="fullpage">
             <section class="section home">
                 <div class="container">
-                    home
+                    <p>2024</p>
+                    <h2>Portfolio</h2>
+                    <div class="img-box txt"><img src="./images/txt.png" alt="Web Publisher"></div>
+                    <ul class="sub-nav">
+                        <li>
+                            <a href="#about">about</a>
+                        </li>
+                        <li>
+                            <a href="#project">project</a>
+                        </li>
+                        <li>
+                            <a href="#design">design</a>
+                        </li>
+                        <li>
+                            <a href="#contact">contact</a>
+                        </li>
+                    </ul>
                 </div>
             </section>
             <section class="section about">
@@ -112,7 +194,7 @@
                     contact
                 </div>
             </section>
-        </div> -->
+        </div>
         
     </section>
 
