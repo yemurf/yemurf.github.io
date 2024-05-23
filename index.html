@@ -41,6 +41,7 @@
             font-family:'noto';
             font-size: 30px;
             font-weight:400;
+            
             color:var(--color05);
         }
        
@@ -77,6 +78,7 @@
             color:var(--color01);
         }
 
+
         .home .container{
             width: 638px; /*?*/
             display: flex;
@@ -91,9 +93,11 @@
             border-radius: 18px; 
             text-align: center;
             line-height: 29px; 
-           nt-family: 'ibm';
-            /* font-weight: 300; */
-            font-size: 20px;       }
+            font-family: 'ibm';
+            /* font-weight: 300; 연해져*/
+            font-size: 20px;
+            transform: translateY(8px);
+        }
         .home h2{
             font-family: 'ibm';
             font-weight: 500;
@@ -103,16 +107,13 @@
         .home .txt{ 
             transform: translate(575px,-173px);
         }
-
-
-
         .home .sub-nav{
             width: 100%;
             display: grid;
             grid-template-columns: repeat(4,1fr);
             column-gap: 20px;
         }
-        .home .sub-nav a{           
+        .home .sub-nav a{
             display: block;
             height: 35px;
             border: 2px solid #000;
@@ -125,9 +126,107 @@
             text-align: right;
             background: url(./images/화살표.png) no-repeat 20px center;
             background-size: 15px 15px;
+            transform: translateY(-83px);
+        } 
+        .home{
+            position:relative;
         }
-        
-      
+        .home::before,.home::after{
+            content:'';
+            display:block;
+            width:230px;
+            height:230px;
+            background: radial-gradient(circle,var(--color02) 20%, rgba(251, 219, 224, 0.5) 50%, rgba(251, 219, 224, 0) 70%);
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(215px,-180px);
+        }
+        .home::after{
+            background: radial-gradient(circle,var(--color03) 20%, rgba(219, 243, 250, 0.5) 50%, rgba(219, 243, 250, 0) 70%);
+            transform:translate(-380px,-80px);
+            z-index: 1;
+        }
+        .fp-overflow{
+            z-index: 10;
+        }
+
+
+        .about{
+            color: var(--color01);
+        }
+        .about .container{
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            column-gap: 20px;
+            row-gap: 36px;
+        }
+        .about h2{
+            text-transform: uppercase;
+            grid-column: 1/-1;
+            font-family: 'ibm';
+            font-weight: 400;
+            font-size: 60px;
+        }
+        .profile .img-box{
+            width: 225px;
+            margin: 0 auto 10px auto;
+        }
+        .profile p{
+            font-size: 18px;
+            color: #000;
+            text-align: center;
+        }
+        .contents .list{
+            display: grid;
+            grid-template-columns: 3fr 4fr;
+            column-gap: 20px;
+            row-gap: 20px;
+        }
+        .contents .list h3{
+            font-family: 'ibm';
+            font-size: 30px;
+            text-transform: capitalize;
+        }
+        .contents .icon{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            width: 211px;
+        }
+        .contents .icon li{
+            width: 40px;
+            height: 40px;
+            margin: 0 10px 10px 0;
+        }
+        .contents .list>li:first-child{
+            order: 1;
+        }
+        .contents .list>li:nth-child(2){
+            order: 3;
+        }
+        .contents .list>li:nth-child(3){
+            order: 2;
+        }
+        .contents .list p{
+            font-size: 20px;
+        } 
+
+        /* 원 만들기 */
+        .about{
+            position: relative;
+        }
+        .about::before,.about::after{
+            position: absolute;
+            display: block;
+            content: '';
+            width: 22px;
+            height: 22px;
+            background-color: var(--color03);
+            border-radius: 50%;
+            transform: translate(0px,0px);
+        }
+
 
 
         
@@ -153,7 +252,7 @@
             </div>
         </header>
         <div id="fullpage">
-            <section class="section home">
+            <section class="section home">  
                 <div class="container">
                     <p>2024</p>
                     <h2>Portfolio</h2>
@@ -176,7 +275,41 @@
             </section>
             <section class="section about">
                 <div class="container">
-                    about
+                    <h2>about</h2>
+                    <div class="profile">
+                        <div class="img-box"><img src="./images/about-img.png" alt="프로필 이미지"></div>
+                        <p>
+                            안녕하세요! <br>
+                            사용자 인터페이스 설계에서 <br>
+                            창의성을 발휘하는 웹퍼블리셔 정예진입니다.
+                        </p>
+                    </div>
+                    <div class="contents">
+                        <ul class="list">
+                            <li>
+                                <h3>edu</h3>
+                                <p>명지전문대학 전자공학과</p>
+                            </li>
+                            <li>
+                                <h3>license</h3>
+                                <p>GTQ 1급</p>
+                            </li>
+                            <li>
+                                <h3>skills</h3>
+                                <ul class="icon">
+                                    <li><img src="./images/ico-photoshop.png" alt="포토샵"></li>
+                                    <li><img src="./images/ico-illustrator.png" alt="일러스트레이터"></li>
+                                    <li><img src="./images/eclipse-logo.png" alt="이클립스"></li>
+                                    <li><img src="./images/oven.png" alt="오븐"></li>
+                                    <li><img src="./images/ico-html.png" alt="html5"></li>
+                                    <li><img src="./images/ico-css.png" alt="css3"></li>
+                                    <li><img src="./images/ico-javascript.png" alt="javascript"></li>
+                                    <li><img src="./images/ico-jqeury.png" alt="jqeury"></li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </div>                        
                 </div>
             </section>
             <section class="section project">
