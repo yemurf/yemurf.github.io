@@ -1,0 +1,10 @@
+<js>
+iframe
+fnprograss?
+offset()?
+
+span 마크업 효과가 뭐지
+패딩 : 안쪽 여백
+color var()?
+animation 은 모든게 갖추어진뒤에 하는거임 
+

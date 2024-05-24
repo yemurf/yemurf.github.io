@@ -1,0 +1,40 @@
+한솔
+environ style 주석 메모 정리, 결과는 완벽
+style title기준 위-쌤 / 아래-내가 쓴거
+product 완벽
+company 복붙 완벽
+index 거지같음
+ir 거지같음
+깃허브에 한솔 올려서 집가서 수정하기
+
+한솔, 빽다방, 투어리스트 목업하기
+목업파일 네이버메일로 저장하기
+
+logo 디자인하기
+
+
+
+
+
+
+컨택 수정하기
+텍스트 반 잘리고 stroke만 남겨두는 걸로 수정하기
+rasterize 해야하나
+
+home
+포트폴리오 제목 기준으로 위아래 마진 20px
+네비 양 옆 마진 20 화살표기준 우마진 13
+네비 밑 마진 40
+
+about - skills 아이콘 좌우상하 마진 15
+아이콘 50*50
+
+height *1/2 = 426
+height = 852
+
+header height 70 width 10 padding 10
+header logo 40*40
+
+font - light 01, medium 02, regular 03
+
+풀페이지가 한번이동하면 끝인데
