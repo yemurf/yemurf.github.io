@@ -113,6 +113,12 @@
             grid-template-columns: repeat(4,1fr);
             column-gap: 20px;
         }
+        .home .sub-nav a:hover{
+            box-shadow: 1px 1px rgba(102, 102, 102, 0.5), 
+            2px 2px rgba(102, 102, 102, 0.5), 
+            3px 3px rgba(102, 102, 102, 0.5);
+            transition: 0.3s;
+        }
         .home .sub-nav a{
             display: block;
             height: 35px;
@@ -213,10 +219,14 @@
         } 
 
         /* 원 만들기 */
-        .about{
+
+        .about .container .contents h3 span{
+            width: auto;
+            display: inline-block;
             position: relative;
+            z-index:100;
         }
-        .about::before,.about::after{
+        .about .container .contents h3 span::before{
             position: absolute;
             display: block;
             content: '';
@@ -224,8 +234,35 @@
             height: 22px;
             background-color: var(--color03);
             border-radius: 50%;
-            transform: translate(0px,0px);
+            bottom: 2px; right: -11px; 
+            z-index: 1;
         }
+
+
+
+        
+        .project .container{
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .project .img-box{
+            width: 400px;
+            height: 270px;
+        }
+        .project .link-nav{
+            display: flex;
+            flex-flow: row wrap;
+        }
+        
+
+        .swiper-slide img{
+            width: 100%;
+            height : 100%;
+            object-fit: cover;
+        }
+
 
 
 
@@ -287,15 +324,15 @@
                     <div class="contents">
                         <ul class="list">
                             <li>
-                                <h3>edu</h3>
+                                <h3><span>edu</span></h3>
                                 <p>명지전문대학 전자공학과</p>
                             </li>
                             <li>
-                                <h3>license</h3>
+                                <h3><span>license</span></h3>
                                 <p>GTQ 1급</p>
                             </li>
                             <li>
-                                <h3>skills</h3>
+                                <h3><span>skills</span></h3>
                                 <ul class="icon">
                                     <li><img src="./images/ico-photoshop.png" alt="포토샵"></li>
                                     <li><img src="./images/ico-illustrator.png" alt="일러스트레이터"></li>
@@ -307,14 +344,61 @@
                                     <li><img src="./images/ico-jqeury.png" alt="jqeury"></li>
                                 </ul>
                             </li>
-                            
                         </ul>
-                    </div>                        
+                    </div>
+                    
                 </div>
             </section>
             <section class="section project">
                 <div class="container">
-                    project
+
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">Slide 1</div>
+                        <div class="swiper-slide">Slide 2</div>
+                        <div class="swiper-slide">Slide 3</div>
+                        <div class="swiper-slide">Slide 4</div>
+                        <div class="swiper-slide">Slide 5</div>
+                        <div class="swiper-slide">Slide 6</div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+
+                 <!-- Swiper JS -->
+                <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+                <!-- Initialize Swiper -->
+                <script>
+                    var swiper = new Swiper(".mySwiper", {
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    });
+                </script>
+
+
+
+                    <!-- <h2>project 제목</h2>
+                    <div class="img-box pro">
+                        <img src="./images/megabox-responsive.png" alt="메가박스 이미지">
+                    </div>
+
+                    <h3>메가박스 반응형 웹페이지</h3>
+                    <p>
+                        제작페이지 : index / join / movie / membership <br>
+                        사용 프로그램 : photoshop, illustrator, html5 , css3, javascript
+                    </p>
+                    <ul class="link-nav">
+                        <li>
+                            <a href="#">코드보기</a>
+                        </li>
+                        <li>
+                            <a href="#">결과보기</a>
+                        </li>
+                    </ul> -->
                 </div>
             </section>
             <section class="section design">
