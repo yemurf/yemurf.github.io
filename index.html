@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,11 @@
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script src="./js/fullpage.js"></script>    
+
+    <script src="./js/fullpage.js"></script>
     <script src="./js/jquery.min.js"></script>
     <!-- <script src="./js/easing.js"></script> -->
     <title>portfolio</title>
@@ -17,219 +21,221 @@
         @font-face {
             font-family: 'ibm';
             src: url(./fonts/IBMPlex/IBMPlexSerif-Light.ttf);
-            font-weight:300;
+            font-weight: 300;
         }
+
         @font-face {
             font-family: 'ibm';
             src: url(./fonts/IBMPlex/IBMPlexSerif-Regular.ttf);
-            font-weight:400;
+            font-weight: 400;
         }
+
         @font-face {
             font-family: 'ibm';
             src: url(./fonts/IBMPlex/IBMPlexSerif-Medium.ttf);
-            font-weight:500;
+            font-weight: 500;
         }
+
         @font-face {
             font-family: 'noto';
             src: url(./fonts/NotoSansKR.ttf);
         }
-        :root{
-            --color01:#1d5089;
-            --color02:#fbdbe0;
-            --color03:#dbf3fa;
-            --color04:#f56b8d;
-            --color05:#000;
-            --color06:#fff;
 
-            font-family:'noto';
+        :root {
+            --color01: #1d5089;
+            --color02: #fbdbe0;
+            --color03: #dbf3fa;
+            --color04: #f56b8d;
+            --color05: #000;
+            --color06: #fff;
+
+            font-family: 'noto';
             font-size: 30px;
-            font-weight:400;
-            
-            color:var(--color05);
+            font-weight: 400;
+
+            color: var(--color05);
         }
-       
-        .container{
-            width: 960px;            
+        .container {
+            width: 960px;
             margin: 0 auto;
-            padding:0 28px; 
+            padding: 0 28px;
         }
-        #header{
+        #header {
             padding-top: 22px;
             position: relative;
-            z-index:10;
+            z-index: 10;
         }
-        #header .container{
+        #header .container {
             display: grid;
-            grid-template-columns:1fr 5fr;
+            grid-template-columns: 1fr 5fr;
             column-gap: 20px;
             justify-content: space-between;
             align-items: center;
         }
-        #header .logo{
-            width:40px;
-            height:40px;
+        #header .logo {
+            width: 40px;
+            height: 40px;
         }
-        #header .main-nav{
-            display:flex;
+        #header .main-nav {
+            display: flex;
             justify-content: flex-end;
             align-items: center;
         }
-        #header .main-nav li{
-            margin-left:64px;
+        #header .main-nav li {
+            margin-left: 64px;
             font-family: 'ibm';
-            font-weight:400;
-            color:var(--color01);
+            font-weight: 400;
+            color: var(--color01);
         }
 
 
-        .home .container{
-            width: 638px; /*?*/
+        .home .container {
+            width: 638px;
+            /*?*/
             display: flex;
             flex-flow: column nowrap;
             justify-content: center;
             align-items: flex-start;
         }
-        .home .container p{
+        .home .container p {
             width: 77px;
             height: 36px;
             border: 3px solid #000;
-            border-radius: 18px; 
+            border-radius: 18px;
             text-align: center;
-            line-height: 29px; 
+            line-height: 29px;
             font-family: 'ibm';
             /* font-weight: 300; 연해져*/
             font-size: 20px;
             transform: translateY(8px);
         }
-        .home h2{
+        .home h2 {
             font-family: 'ibm';
             font-weight: 500;
             font-size: 150px;
             transform: translateY(-10px);
         }
-        .home .txt{ 
-            transform: translate(575px,-173px);
+        .home .txt {
+            transform: translate(575px, -173px);
         }
-        .home .sub-nav{
+        .home .sub-nav {
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+            grid-template-columns: repeat(4, 1fr);
             column-gap: 20px;
         }
-        .home .sub-nav a:hover{
-            box-shadow: 1px 1px rgba(102, 102, 102, 0.5), 
-            2px 2px rgba(102, 102, 102, 0.5), 
-            3px 3px rgba(102, 102, 102, 0.5);
+        .home .sub-nav a:hover {
+            box-shadow: 1px 1px rgba(102, 102, 102, 0.5),
+                2px 2px rgba(102, 102, 102, 0.5),
+                3px 3px rgba(102, 102, 102, 0.5);
             transition: 0.3s;
         }
-        .home .sub-nav a{
+        .home .sub-nav a {
             display: block;
             height: 35px;
             border: 2px solid #000;
-            border-radius: 18px;  
+            border-radius: 18px;
             padding-right: 10px;
-            line-height: 27px; 
-            font-family: 'ibm';        
+            line-height: 27px;
+            font-family: 'ibm';
             font-weight: 300;
             font-size: 20px;
             text-align: right;
             background: url(./images/화살표.png) no-repeat 20px center;
             background-size: 15px 15px;
             transform: translateY(-83px);
-        } 
-        .home{
-            position:relative;
         }
-        .home::before,.home::after{
-            content:'';
-            display:block;
-            width:230px;
-            height:230px;
-            background: radial-gradient(circle,var(--color02) 20%, rgba(251, 219, 224, 0.5) 50%, rgba(251, 219, 224, 0) 70%);
-            position:absolute;
-            left:50%;
-            top:50%;
-            transform:translate(215px,-180px);
+        .home {
+            position: relative;
         }
-        .home::after{
-            background: radial-gradient(circle,var(--color03) 20%, rgba(219, 243, 250, 0.5) 50%, rgba(219, 243, 250, 0) 70%);
-            transform:translate(-380px,-80px);
+        .home::before,
+        .home::after {
+            content: '';
+            display: block;
+            width: 230px;
+            height: 230px;
+            background: radial-gradient(circle, var(--color02) 20%, rgba(251, 219, 224, 0.5) 50%, rgba(251, 219, 224, 0) 70%);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(215px, -180px);
+        }
+        .home::after {
+            background: radial-gradient(circle, var(--color03) 20%, rgba(219, 243, 250, 0.5) 50%, rgba(219, 243, 250, 0) 70%);
+            transform: translate(-380px, -80px);
             z-index: 1;
         }
-        .fp-overflow{
+        .fp-overflow {
             z-index: 10;
         }
-
-
-        .about{
+        .about {
             color: var(--color01);
         }
-        .about .container{
+        .about .container {
             display: grid;
             grid-template-columns: 5fr 7fr;
             column-gap: 20px;
             row-gap: 36px;
         }
-        .about h2{
+        .about h2 {
             text-transform: uppercase;
             grid-column: 1/-1;
             font-family: 'ibm';
             font-weight: 400;
             font-size: 60px;
         }
-        .profile .img-box{
+        .profile .img-box {
             width: 225px;
             margin: 0 auto 10px auto;
         }
-        .profile p{
+        .profile p {
             font-size: 18px;
             color: #000;
             text-align: center;
         }
-        .contents .list{
+        .contents .list {
             display: grid;
             grid-template-columns: 3fr 4fr;
             column-gap: 20px;
             row-gap: 20px;
         }
-        .contents .list h3{
+        .contents .list h3 {
             font-family: 'ibm';
             font-size: 30px;
             text-transform: capitalize;
         }
-        .contents .icon{
+        .contents .icon {
             display: flex;
             flex-flow: row wrap;
             justify-content: flex-start;
             width: 211px;
         }
-        .contents .icon li{
+        .contents .icon li {
             width: 40px;
             height: 40px;
             margin: 0 10px 10px 0;
         }
-        .contents .list>li:first-child{
+        .contents .list>li:first-child {
             order: 1;
         }
-        .contents .list>li:nth-child(2){
+        .contents .list>li:nth-child(2) {
             order: 3;
         }
-        .contents .list>li:nth-child(3){
+        .contents .list>li:nth-child(3) {
             order: 2;
         }
-        .contents .list p{
+        .contents .list p {
             font-size: 20px;
-        } 
+        }
 
         /* 원 만들기 */
-
-        .about .container .contents h3 span{
-            width: auto;
+        .about .container .contents h3 span {
             display: inline-block;
             position: relative;
-            z-index:100;
+            z-index: 100;
         }
-        .about .container .contents h3 span::before{
+
+        .about .container .contents h3 span::before {
             position: absolute;
             display: block;
             content: '';
@@ -237,63 +243,82 @@
             height: 22px;
             background-color: var(--color03);
             border-radius: 50%;
-            bottom: 2px; right: -11px; 
+            bottom: 2px;
+            right: -11px;
+            z-index: 0;
+        }
+
+        .about .container h3 span div {
+            position: relative;
             z-index: 1;
         }
 
 
 
-        
-        /* .project .swiper{
-            display: flex;
-            flex-flow: column wrap;
-            justify-content: center;
-            align-items: center;
-        } */
-        .project .mySwiper{
-            display: flex;
-            flex-flow: column wrap;
-            justify-content: center;
-            align-items: center;
-        }
-        .project h2{
+
+
+        .project h2 {
             margin-left: 105px;
             margin-bottom: 41px;
+            font-family: 'ibm';
+            font-size: 60px;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: var(--color04);
         }
-        /* .swiper-slide img{
-            width: 100%;
-            height : 100%;
-            object-fit: cover;
-        } */
-        .swiper {
+        .swiper {/* 꼭 있어야 하는건가 */
             width: 100%;
             height: 100%;
         }
         .swiper-slide {
             text-align: center;
-            font-size: 18px;
             background: #fff;
             display: flex;
+            flex-flow: column wrap;
             justify-content: center;
             align-items: center;
         }
-
-
-        .swiper-slide .img-box{
+        .swiper-slide>.img-box {
             width: 400px;
             height: 270px;
+            margin-bottom: 29px;
         }
+        .swiper-slide .link-nav ul {
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .swiper-slide h3 {
+            margin-bottom: 14px;
+            font-size: 30px;
+            font-weight: 500;
+        }
+        .swiper-slide p {
+            font-size: 20px;
+        }
+        .swiper-slide li {
+            font-size: 20px;
+            border: 3px solid black;
+            border-radius: 20px; 
+            margin-right: 20px;
+            margin-top: 20px;
+            background: url(./images/화살표.png) no-repeat 15px center;
+            background-size: 19px 19px;
+            width: 134px;
+            text-align: right;
+            padding-right: 7px;
+        }
+        /* 프로젝트 원 29*29 */
 
 
 
 
-        
     </style>
 </head>
+
 <body>
     <section class="wrap">
         <header id="header">
-            <div class="container">                
+            <div class="container">
                 <h1 class="logo">
                     <a href="#home">
                         <div class="img-box"><img src="./images/eclipse-logo.png" alt="pflogo"></div>
@@ -310,7 +335,7 @@
             </div>
         </header>
         <div id="fullpage">
-            <section class="section home">  
+            <section class="section home">
                 <div class="container">
                     <p>2024</p>
                     <h2>Portfolio</h2>
@@ -345,15 +370,21 @@
                     <div class="contents">
                         <ul class="list">
                             <li>
-                                <h3><span>edu</span></h3>
+                                <h3><span>
+                                        <div>edu</div>
+                                    </span></h3>
                                 <p>명지전문대학 전자공학과</p>
                             </li>
                             <li>
-                                <h3><span>license</span></h3>
+                                <h3><span>
+                                        <div>license</div>
+                                    </span></h3>
                                 <p>GTQ 1급</p>
                             </li>
                             <li>
-                                <h3><span>skills</span></h3>
+                                <h3><span>
+                                        <div>skills</div>
+                                    </span></h3>
                                 <ul class="icon">
                                     <li><img src="./images/ico-photoshop.png" alt="포토샵"></li>
                                     <li><img src="./images/ico-illustrator.png" alt="일러스트레이터"></li>
@@ -367,7 +398,6 @@
                             </li>
                         </ul>
                     </div>
-                    
                 </div>
             </section>
             <section class="section project">
@@ -376,16 +406,14 @@
                     <!-- Swiper -->
                     <div class="swiper mySwiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="img-box">
-                                    <img src="./images/project-hollys.jpg" alt="할리스목업이미지">
-                                </div>
+                            <div class="swiper-slide 01">
+                                <div class="img-box"><img src="./images/project-hollys.jpg" alt="할리스목업이미지"></div>
                                 <h3>할리스 고정형 웹페이지</h3>
                                 <p>
                                     제작 페이지 : index / coffee / login / mall <br>
                                     사용 프로그램 : photoshop, illustrator, html 5, css 3, javascript
                                 </p>
-                                <nav>
+                                <nav class="link-nav">
                                     <ul>
                                         <li>
                                             <a href="#">코드보기</a>
@@ -396,54 +424,88 @@
                                     </ul>
                                 </nav>
                             </div>
-                            <div class="swiper-slide">Slide 2</div>
-                            <div class="swiper-slide">Slide 3</div>
-                            <div class="swiper-slide">Slide 4</div>
-                            <div class="swiper-slide">Slide 5</div>
-                            <div class="swiper-slide">Slide 6</div>
+                            <div class="swiper-slide 02">
+                                <div class="img-box"><img src="./images/project-megabox.png" alt="메가박스목업이미지"></div>
+                                <h3>메가박스 반응형 웹페이지</h3>
+                                <p>
+                                    제작 페이지 : index / join / movie / membership <br>
+                                    사용 프로그램 : photoshop, illustrator, html 5, css 3, javascript
+                                </p>
+                                <nav class="link-nav">
+                                    <ul>
+                                        <li>
+                                            <a href="#">코드보기</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">결과보기</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="swiper-slide 03">
+                                <div class="img-box"><img src="./images/project-hansol.jpg" alt="한솔제지목업이미지"></div>
+                                <h3>한솔제지 고정형 웹페이지</h3>
+                                <p>
+                                    제작 페이지 : index / company / environ / product / ir <br>
+                                    사용 프로그램 : photoshop, illustrator, html 5, css 3, javascript
+                                </p>
+                                <nav class="link-nav">
+                                    <ul>
+                                        <li>
+                                            <a href="#">코드보기</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">결과보기</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="swiper-slide 04">
+                                <div class="img-box"><img src="./images/project-tourist.png" alt="투어리스트목업이미지"></div>
+                                <h3>투어리스트 반응형 웹페이지</h3>
+                                <p>
+                                    제작 페이지 : index / join login / notice-view / notice / program <br>
+                                    사용 프로그램 : photoshop, illustrator, html 5, css 3, javascript
+                                </p>
+                                <nav class="link-nav">
+                                    <ul>
+                                        <li>
+                                            <a href="#">코드보기</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">결과보기</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="swiper-slide 05">
+                                <div class="img-box"><img src="./images/project-paikdabang.png" alt="빽다방목업이미지"></div>
+                                <h3>빽다방 반응형 웹페이지</h3>
+                                <p>
+                                    제작 페이지 : index<br>
+                                    사용 프로그램 : photoshop, illustrator, html 5, css 3, javascript
+                                </p>
+                                <nav class="link-nav">
+                                    <ul>
+                                        <li>
+                                            <a href="#">코드보기</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">결과보기</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
                     </div>
-
-                    <!-- Swiper JS -->
-                    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-                    <!-- Initialize Swiper -->
-                    <script>
-                        var swiper = new Swiper(".mySwiper", {
-                        navigation: {
-                            nextEl: ".swiper-button-next",
-                            prevEl: ".swiper-button-prev",
-                        },
-                        });
-                    </script>
-
-
-
-                    <!-- <h2>project 제목</h2>
-                    <div class="img-box pro">
-                        <img src="./images/megabox-responsive.png" alt="메가박스 이미지">
-                    </div>
-
-                    <h3>메가박스 반응형 웹페이지</h3>
-                    <p>
-                        제작페이지 : index / join / movie / membership <br>
-                        사용 프로그램 : photoshop, illustrator, html5 , css3, javascript
-                    </p>
-                    <ul class="link-nav">
-                        <li>
-                            <a href="#">코드보기</a>
-                        </li>
-                        <li>
-                            <a href="#">결과보기</a>
-                        </li>
-                    </ul> -->
                 </div>
             </section>
             <section class="section design">
                 <div class="container">
-                    design
+                    <h2>design</h2>
+
                 </div>
             </section>
             <section class="section contact">
@@ -452,16 +514,27 @@
                 </div>
             </section>
         </div>
-        
+
     </section>
 
     <script>
         new fullpage('#fullpage', {
             //options here
-            autoScrolling:true,
+            autoScrolling: true,
             scrollHorizontally: true,
-            anchors:['home', 'about', 'project','design','contact']
+            anchors: ['home', 'about', 'project', 'design', 'contact']
         });
+
+
+        // Initialize Swiper
+        var swiper = new Swiper(".mySwiper", {
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
     </script>
 </body>
+
 </html>
