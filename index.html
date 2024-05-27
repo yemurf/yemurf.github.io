@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/fullpage.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 
     <script src="./js/fullpage.js"></script>    
     <script src="./js/jquery.min.js"></script>
@@ -241,26 +244,44 @@
 
 
         
-        .project .container{
+        /* .project .swiper{
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+        } */
+        .project .mySwiper{
             display: flex;
             flex-flow: column wrap;
             justify-content: center;
             align-items: center;
         }
-        .project .img-box{
-            width: 400px;
-            height: 270px;
+        .project h2{
+            margin-left: 105px;
+            margin-bottom: 41px;
         }
-        .project .link-nav{
-            display: flex;
-            flex-flow: row wrap;
-        }
-        
-
-        .swiper-slide img{
+        /* .swiper-slide img{
             width: 100%;
             height : 100%;
             object-fit: cover;
+        } */
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .swiper-slide .img-box{
+            width: 400px;
+            height: 270px;
         }
 
 
@@ -351,33 +372,52 @@
             </section>
             <section class="section project">
                 <div class="container">
-
-                <!-- Swiper -->
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">Slide 1</div>
-                        <div class="swiper-slide">Slide 2</div>
-                        <div class="swiper-slide">Slide 3</div>
-                        <div class="swiper-slide">Slide 4</div>
-                        <div class="swiper-slide">Slide 5</div>
-                        <div class="swiper-slide">Slide 6</div>
+                    <h2>project</h2>
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="img-box">
+                                    <img src="./images/project-hollys.jpg" alt="할리스목업이미지">
+                                </div>
+                                <h3>할리스 고정형 웹페이지</h3>
+                                <p>
+                                    제작 페이지 : index / coffee / login / mall <br>
+                                    사용 프로그램 : photoshop, illustrator, html 5, css 3, javascript
+                                </p>
+                                <nav>
+                                    <ul>
+                                        <li>
+                                            <a href="#">코드보기</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">결과보기</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="swiper-slide">Slide 2</div>
+                            <div class="swiper-slide">Slide 3</div>
+                            <div class="swiper-slide">Slide 4</div>
+                            <div class="swiper-slide">Slide 5</div>
+                            <div class="swiper-slide">Slide 6</div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                </div>
 
-                 <!-- Swiper JS -->
-                <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+                    <!-- Swiper JS -->
+                    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-                <!-- Initialize Swiper -->
-                <script>
-                    var swiper = new Swiper(".mySwiper", {
-                    navigation: {
-                        nextEl: ".swiper-button-next",
-                        prevEl: ".swiper-button-prev",
-                    },
-                    });
-                </script>
+                    <!-- Initialize Swiper -->
+                    <script>
+                        var swiper = new Swiper(".mySwiper", {
+                        navigation: {
+                            nextEl: ".swiper-button-next",
+                            prevEl: ".swiper-button-prev",
+                        },
+                        });
+                    </script>
 
 
 
