@@ -282,6 +282,8 @@
             width: 400px;
             height: 270px;
             margin-bottom: 29px;
+            object-fit: cover;
+            /* contain이랑 cover랑 무슨차이지 */
         }
         .swiper-slide .link-nav ul {
             display: flex;
@@ -308,7 +310,22 @@
             padding-right: 7px;
         }
         /* 프로젝트 원 29*29 */
-
+        .project .container h2::before{
+            position: absolute;
+            content: '';
+            display: block;
+            width: 29px;
+            height: 29px;
+            background-color: var(--color02);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .project .container span{
+            position: relative;
+        }
+        .project .container h2{
+            z-index: 1;
+        }
 
 
 
@@ -321,7 +338,7 @@
             <div class="container">
                 <h1 class="logo">
                     <a href="#home">
-                        <div class="img-box"><img src="./images/eclipse-logo.png" alt="pflogo"></div>
+                        <div class="img-box"><img src="./images/logo.png" alt="pflogo"></div>
                     </a>
                 </h1>
                 <nav>
@@ -402,6 +419,7 @@
             </section>
             <section class="section project">
                 <div class="container">
+                    <!-- <h2><span>project</span></h2> -->
                     <h2>project</h2>
                     <!-- Swiper -->
                     <div class="swiper mySwiper">
