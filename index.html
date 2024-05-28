@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/reset.css">
+    <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/fullpage.css">
+
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -18,6 +20,20 @@
     <!-- <script src="./js/easing.js"></script> -->
     <title>portfolio</title>
     <style>
+
+        @keyframes fade {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+        .fade {
+            animation: fade 2s infinite alternate;
+        }
+
+
         @font-face {
             font-family: 'ibm';
             src: url(./fonts/IBMPlex/IBMPlexSerif-Light.ttf);
@@ -64,6 +80,8 @@
             padding-top: 22px;
             position: relative;
             z-index: 10;
+            background-color: #fff;
+            display: none;
         }
         #header .container {
             display: grid;
@@ -300,16 +318,21 @@
         .swiper-slide li {
             font-size: 20px;
             border: 3px solid black;
-            border-radius: 20px; 
+            border-radius: 30px; 
             margin-right: 20px;
             margin-top: 20px;
             background: url(./images/화살표.png) no-repeat 15px center;
             background-size: 19px 19px;
-            width: 134px;
+            width: 200px;
             text-align: right;
             padding-right: 7px;
         }
-        /* 프로젝트 원 29*29 */
+        .swiper-slide li:first-child{
+            width: 150px;
+        }
+
+
+        /* 프로젝트 원 29*29 
         .project .container h2::before{
             position: absolute;
             content: '';
@@ -325,9 +348,77 @@
         }
         .project .container h2{
             z-index: 1;
+        }*/
+
+
+
+        .design h2{
+            margin-left: 105px;
+            margin-bottom: 85px;
+            font-family: 'ibm';
+            font-size: 60px;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: var(--color04);
+        }
+        .design-popup{
+            display: flex;
+            flex-flow: row wrap;
+            column-gap: 105px;
+            margin-left: 105px;
+        }
+        .design{
+            position: relative;
+        }
+        .popup{
+            display:none;
+            position: absolute;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            background:rgba(0,0,0,0.5);            
+            justify-content: center;
+            align-items: center;
         }
 
 
+
+
+        .contact h2{
+            margin-left: 105px;
+            margin-bottom: 85px;
+            font-family: 'ibm';
+            font-size: 60px;
+            font-weight: 400;
+            text-transform: uppercase;
+            color: var(--color04);
+        }
+        .contact .cons-box{
+            display: grid;
+            grid-template-columns: 5fr 7fr;
+            column-gap: 20px;
+            row-gap: 115px;
+        }
+        .contact .img-box{
+            width: 365px;
+            margin: auto 27px auto 30px;
+            /* 상 우 하 좌 */
+        }
+        .contact ul{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+        .contact li{
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .icon-box{
+            width: 60px;
+            margin-right: 20px;
+        }
 
     </style>
 </head>
@@ -434,10 +525,10 @@
                                 <nav class="link-nav">
                                     <ul>
                                         <li>
-                                            <a href="#">코드보기</a>
+                                            <a href="https://github.com/yemurf/hollys/" target="_blank">깃허브 보기</a>
                                         </li>
                                         <li>
-                                            <a href="#">결과보기</a>
+                                            <a href="https://yemurf.github.io/hollys/" target="_blank">웹사이트 바로가기</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -452,10 +543,10 @@
                                 <nav class="link-nav">
                                     <ul>
                                         <li>
-                                            <a href="#">코드보기</a>
+                                            <a href="https://github.com/yemurf/megabox/" target="_blank">깃허브 보기</a>
                                         </li>
                                         <li>
-                                            <a href="#">결과보기</a>
+                                            <a href="https://yemurf.github.io/megabox/" target="_blank">웹사이트 바로가기</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -470,10 +561,10 @@
                                 <nav class="link-nav">
                                     <ul>
                                         <li>
-                                            <a href="#">코드보기</a>
+                                            <a href="https://github.com/yemurf/hansol/" target="_blank">깃허브 보기</a>
                                         </li>
                                         <li>
-                                            <a href="#">결과보기</a>
+                                            <a href="https://yemurf.github.io/hansol/" target="_blank">웹사이트 바로가기</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -482,16 +573,16 @@
                                 <div class="img-box"><img src="./images/project-tourist.png" alt="투어리스트목업이미지"></div>
                                 <h3>투어리스트 반응형 웹페이지</h3>
                                 <p>
-                                    제작 페이지 : index / join login / notice-view / notice / program <br>
+                                    제작 페이지 : index / join / login / notice-view / notice / program <br>
                                     사용 프로그램 : photoshop, illustrator, html 5, css 3, javascript
                                 </p>
                                 <nav class="link-nav">
                                     <ul>
                                         <li>
-                                            <a href="#">코드보기</a>
+                                            <a href="https://github.com/yemurf/tourist/" target="_blank">깃허브 보기</a>
                                         </li>
                                         <li>
-                                            <a href="#">결과보기</a>
+                                            <a href="https://yemurf.github.io/tourist/" target="_blank">웹사이트 바로가기</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -506,10 +597,10 @@
                                 <nav class="link-nav">
                                     <ul>
                                         <li>
-                                            <a href="#">코드보기</a>
+                                            <a href="https://github.com/yemurf/paikdabang/" target="_blank">깃허브 보기</a>
                                         </li>
                                         <li>
-                                            <a href="#">결과보기</a>
+                                            <a href="https://yemurf.github.io/paikdabang/" target="_blank">웹사이트 바로가기</a>
                                         </li>
                                     </ul>
                                 </nav>
@@ -523,16 +614,58 @@
             <section class="section design">
                 <div class="container">
                     <h2>design</h2>
-
+                    <ul class="design-popup">
+                        <li>
+                            <div class="btn-popup 01">
+                                <div class="img-box"><img src="./images/사각단추.jpg" alt=""></div>
+                            </div>
+                            <div class="popup">                                
+                                <div class="img-box"><img src="./images/사각단추.jpg" alt="리더보드 이미지"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="btn-popup 02">
+                                <div class="img-box"><img src="./images/popup-사각배너.png" alt=""></div>
+                            </div>
+                            <div class="popup">
+                                <div class="img-box"><img src="./images/사각배너.jpg" alt="리더보드 이미지">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="btn-popup 03">
+                                <div class="img-box"><img src="./images/popup-리더보드.png" alt=""></div>
+                            </div>
+                            <div class="popup">
+                                <div class="img-box"><img src="./images/리더보드.jpg" alt="리더보드 이미지">
+                            </div>
+                        </li>
+                    </ul>        
                 </div>
             </section>
             <section class="section contact">
                 <div class="container">
-                    contact
+                    <h2>contact</h2>
+                    <div class="cons-box">
+                        <div class="img-box"><img src="./images/contact-img.png" alt="프로필이미지"></div>
+                        <ul>
+                            <li>
+                                <div class="icon-box"><img src="./images/icon-phone.png" alt=""></div>
+                                010-3508-3542
+                            </li>
+                            <li>
+                                <div class="icon-box"><img src="./images/icon-email.png" alt=""></div>
+                                yejin010123@gmail.com
+                            </li>
+                            <li>
+                                <div class="icon-box"><img src="./images/icon-location.png" alt=""></div>
+                                인천시 서구
+                            </li>
+                        </ul>
+                    </div>
+                    
                 </div>
             </section>
         </div>
-
     </section>
 
     <script>
@@ -540,9 +673,20 @@
             //options here
             autoScrolling: true,
             scrollHorizontally: true,
-            anchors: ['home', 'about', 'project', 'design', 'contact']
+            anchors: ['home', 'about', 'project', 'design', 'contact'],
+            afterLoad: function(origin, destination, direction, trigger){               
+                //색인 사용
+                if(destination.index >= 1){
+                    $('#header').css({
+                        display:'block',
+                    });
+                }else{
+                    $('#header').css({
+                        display:'none',
+                    });
+                }
+            }
         });
-
 
         // Initialize Swiper
         var swiper = new Swiper(".mySwiper", {
@@ -551,6 +695,16 @@
                 prevEl: ".swiper-button-prev",
             },
         });
+
+        $('.btn-popup').click(function(){
+            $(this).next('.popup').css({
+                display:'flex',
+            });
+        })
+
+        $('.popup').click(function(){
+            $('.popup').hide();
+        })
 
     </script>
 </body>
